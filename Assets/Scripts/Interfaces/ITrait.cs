@@ -1,0 +1,4 @@
+interface ITrait 
+{
+    void Effect();
+}
