@@ -5216,6 +5216,7 @@ GameObject:
   - component: {fileID: 2729993371663453111}
   - component: {fileID: -2455937408244001167}
   - component: {fileID: 6480228201721477867}
+  - component: {fileID: 3412975295315499589}
   m_Layer: 6
   m_Name: Survivor
   m_TagString: TribeMember
@@ -5388,6 +5389,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &3412975295315499589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729993371663453112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc3ca0da7bed6947b374eead17bd336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weightCapacity: 5
 --- !u!1 &2729993371668706249
 GameObject:
   m_ObjectHideFlags: 0

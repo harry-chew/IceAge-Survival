@@ -5,9 +5,10 @@ using UnityEngine;
 public class Tree : ResourceAbstract, IInteractable
 {
     
-    public void Interact()
+    public ICollectable Interact()
     {
-        
+        //Placeholder value
+        return null;
     }
 
 }
