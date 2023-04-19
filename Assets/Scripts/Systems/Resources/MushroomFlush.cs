@@ -15,9 +15,15 @@ public class MushroomFlush : MonoBehaviour, IInteractable
         }
     }
 
-    public void Interact()
+    public ICollectable Interact()
     {
-        transform.GetChild(0).GetComponent<ICollectable>()?.Collect();
-        Debug.Log("We collected 1 mushroom");
+        ICollectable mushroom = transform.GetChild(0).GetComponent<ICollectable>();
+        //transform.GetChild(0).GetComponent<ICollectable>()?.Collect();
+
+        return mushroom;
     }
+
+
+
+
 }

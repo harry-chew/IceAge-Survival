@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class TribesmenInventory : MonoBehaviour
 {
-    [SerializeField] private int inventorySize = 5;
-    
-    private List<InventoryItem> inventory = new List<InventoryItem>();
+    //How much the individual Tribesman can carry
+    [SerializeField]
+    private float weightCapacity;
 
-    public void AddItemToInventory(InventoryItem item)
-    {
-        if (inventory.Count < inventorySize)
-        {
-            inventory.Add(new InventoryItem(item.itemName, item.itemWeight));
-        }
-    }
+    //string = Item-name  float = item-weight
+    //Total number of items can be calculated like this: /totalWeight in Inventory (of the same item)/ weight of the Item (singular))
+    //Example: 1.6 (total Mushroom weight) / 0.2 (Weight of 1 Mushroom) = 8 Mushrooms in Inventory
+    private Dictionary<string, float> inventory = new Dictionary<string, float>();
     
-    public void RemoveItemFromInventory(InventoryItem item)
+    public void AddItem(string itemName, float itemWeight)
     {
-        for (int i = 0; i < inventory.Count; i++)
+        weightCapacity -= itemWeight;
+
+        if (!inventory.ContainsKey(itemName))
         {
-            if (inventory[i] == item)
-            {
-                inventory.RemoveAt(i);
-                break;
-            }
+            inventory.Add(itemName, itemWeight);
         }
+        else
+        {
+            inventory[itemName] += itemWeight;
+        }
+
+        Debug.Log("Total weight of Mushrooms: " + inventory["Mushroom"]);
     }
 
-    public void RemoveAllItemsFromInventory()
+    public float GetRemainingCapacity()
     {
-        inventory.Clear();
+        return weightCapacity;
     }
-    
 }
